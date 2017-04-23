@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Fuck the LeetCode(一) | CK&#39;s blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="CK">
+    
+    
+
+    <meta name="description" content="Math12. Integer to Roman原题地址
+这题好玩的是我的解法应该是全网最快的，因为方法很傻
+public class Solution {
+    public String intToRoman(int num) {
+        String[][] c={
+            {&amp;quot;&amp;quot;,&amp;quot;I&amp;quot;,&amp;quot;II&amp;quot;,&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fuck the LeetCode(一) | CK's blog">
+<meta property="og:url" content="http://sdck139.github.io/2017/04/23/Fuck-the-LeetCode-一/index.html">
+<meta property="og:site_name" content="CK's blog">
+<meta property="og:description" content="Math12. Integer to Roman原题地址
+这题好玩的是我的解法应该是全网最快的，因为方法很傻
+public class Solution {
+    public String intToRoman(int num) {
+        String[][] c={
+            {&amp;quot;&amp;quot;,&amp;quot;I&amp;quot;,&amp;quot;II&amp;quot;,&amp;qu">
+<meta property="og:updated_time" content="2017-04-23T12:53:08.808Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fuck the LeetCode(一) | CK's blog">
+<meta name="twitter:description" content="Math12. Integer to Roman原题地址
+这题好玩的是我的解法应该是全网最快的，因为方法很傻
+public class Solution {
+    public String intToRoman(int num) {
+        String[][] c={
+            {&amp;quot;&amp;quot;,&amp;quot;I&amp;quot;,&amp;quot;II&amp;quot;,&amp;qu">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">CK&#39;s blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Fuck the LeetCode(一)</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-04-23" class="post-meta__date date">2017-04-23</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h3><h4 id="12-Integer-to-Roman"><a href="#12-Integer-to-Roman" class="headerlink" title="12. Integer to Roman"></a>12. Integer to Roman</h4><p><a href="https://leetcode.com/problems/integer-to-roman/#/description" target="_blank" rel="external">原题地址</a></p>
+<p>这题好玩的是我的解法应该是全网最快的，因为方法很傻</p>
+<pre><code>public class Solution {
+    public String intToRoman(int num) {
+        String[][] c={
+            {&quot;&quot;,&quot;I&quot;,&quot;II&quot;,&quot;III&quot;,&quot;IV&quot;,&quot;V&quot;,&quot;VI&quot;,&quot;VII&quot;,&quot;VIII&quot;,&quot;IX&quot;},
+            {&quot;&quot;,&quot;X&quot;,&quot;XX&quot;,&quot;XXX&quot;,&quot;XL&quot;,&quot;L&quot;,&quot;LX&quot;,&quot;LXX&quot;,&quot;LXXX&quot;,&quot;XC&quot;},
+            {&quot;&quot;,&quot;C&quot;,&quot;CC&quot;,&quot;CCC&quot;,&quot;CD&quot;,&quot;D&quot;,&quot;DC&quot;,&quot;DCC&quot;,&quot;DCCC&quot;,&quot;CM&quot;},
+            {&quot;&quot;,&quot;M&quot;,&quot;MM&quot;,&quot;MMM&quot;}
+        };
+        StringBuffer roman = new StringBuffer();
+        roman.append(c[3][num / 1000 % 10]);
+        roman.append(c[2][num / 100 % 10]);
+        roman.append(c[1][num / 10 % 10]);
+        roman.append(c[0][num % 10]);
+
+        return roman.toString();
+    }
+}
+</code></pre><p>因为一想反正要识别7个以上的特定字符，干脆就全给你写出来让你自己去匹配，结果就写出了这么蠢的算法，然后速度全网最快，代码很简单不解释了。</p>
+<h4 id="13-Roman-to-Integer"><a href="#13-Roman-to-Integer" class="headerlink" title="13. Roman to Integer"></a>13. Roman to Integer</h4><p><a href="https://leetcode.com/problems/roman-to-integer/#/description" target="_blank" rel="external">原题地址</a></p>
+<pre><code>public class Solution {
+    public int romanToInt(String s) {
+        int result = 0;
+        boolean isAdd = true;
+        for(int i = s.length() - 1; i &gt;= 0; i--) {
+            if(i == s.length() - 1) result += romanChatToInt(s.charAt(i));
+            else {
+                if(romanChatToInt(s.charAt(i)) &lt; romanChatToInt(s.charAt(i + 1))) isAdd = false;
+                else if(romanChatToInt(s.charAt(i)) &gt; romanChatToInt(s.charAt(i + 1))) isAdd = true;
+                if(isAdd) result += romanChatToInt(s.charAt(i));
+                else result -= romanChatToInt(s.charAt(i));
+            }
+        }
+        return result;
+    }
+
+    public int romanChatToInt(char c) {
+        switch(c) {
+            case &apos;I&apos;: return 1;
+            case &apos;V&apos;: return 5;
+            case &apos;X&apos;: return 10;
+            case &apos;L&apos;: return 50;
+            case &apos;C&apos;: return 100;
+            case &apos;D&apos;: return 500;
+            case &apos;M&apos;: return 1000;
+            default: break;
+        }
+        return 0;
+    }
+}
+</code></pre><p>这题是上题的兄弟题，思路就是十进制与其他进制的互转加上一个字符转数字的过程，看了一下运算总时间10ms，比最快的快了8倍…真是傻子出奇迹了</p>
+<h3 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h3><h4 id="22-Generate-Parentheses"><a href="#22-Generate-Parentheses" class="headerlink" title="22. Generate Parentheses"></a>22. Generate Parentheses</h4><p><a href="https://leetcode.com/problems/generate-parentheses/#/description" target="_blank" rel="external">原题地址</a></p>
+<pre><code>class Solution(object):
+    def generateParenthesis(self, n):
+        &quot;&quot;&quot;
+        :type n: int
+        :rtype: List[str]
+        &quot;&quot;&quot;
+        result = []
+        def addMore(item, left, right, n):
+            if left == right == n:
+                result.append(item)
+                return
+            if left == n:
+                addMore(item + &quot;)&quot;, left, right + 1, n)
+                return
+            if left &gt; right:
+                addMore(item + &quot;(&quot;, left + 1, right, n)
+                addMore(item + &quot;)&quot;, left, right + 1, n)
+                return
+            else:
+                addMore(item + &quot;(&quot;, left + 1, right, n)
+                return
+        addMore(&quot;&quot;, 0, 0, n)
+        return result
+</code></pre><p>这题是回溯算法的基础题了，在我看来回溯算法需要抓住三个点：起始状态，前进规则和结束条件。然后疯狂递归就行了。<br>比如这题，起始的状态就是一个空字符串。前进的规则就是：左括号数目大于右括号数目时，加左加右都可以，左括号数目等于括号数时，只能加右，其他情况只能加左。结束条件即左右括号数等于括号数。感觉不难理解。</p>
+<h4 id="39-Combination-Sum"><a href="#39-Combination-Sum" class="headerlink" title="39. Combination Sum"></a>39. Combination Sum</h4><p><a href="https://leetcode.com/problems/combination-sum/#/description" target="_blank" rel="external">原题地址</a></p>
+<pre><code>public class Solution {
+    public List&lt;List&lt;Integer&gt;&gt; combinationSum(int[] candidates, int target) {
+        int sum = 0;
+        List&lt;List&lt;Integer&gt;&gt; l = new LinkedList&lt;List&lt;Integer&gt;&gt;();
+        LinkedList&lt;Integer&gt; result = new LinkedList&lt;Integer&gt;();
+        LinkedList&lt;LinkedList&lt;Integer&gt;&gt; error = new LinkedList&lt;LinkedList&lt;Integer&gt;&gt;();
+        error.add(new LinkedList&lt;Integer&gt;());
+        while(error.size() &gt; 1 || error.getFirst().size() != candidates.length) {
+            for(int candidate : candidates) {
+                if(!error.getLast().contains(candidate)) {
+                    if(!result.isEmpty()) {
+                        if(candidate &lt; result.getLast()) {
+                            error.getLast().add(candidate);
+                            continue;
+                        }
+                    }
+                    if(sum + candidate &lt; target) {
+                        result.add(candidate);
+                        sum += candidate;
+                        error.add(new LinkedList&lt;Integer&gt;());
+                        break;
+                    } else if(sum + candidate == target) {
+                        result.add(candidate);
+                        LinkedList&lt;Integer&gt; temp = new LinkedList&lt;Integer&gt;();
+                        temp = (LinkedList&lt;Integer&gt;) result.clone();
+                        l.add(temp);
+                        result.removeLast();
+                        error.getLast().add(candidate);
+                    } else { 
+                        error.getLast().add(candidate);
+                    }
+                }
+                if(error.getLast().size() == candidates.length &amp;&amp; error.size() &gt; 1) {
+                    error.removeLast();
+                    int temp = result.removeLast();
+                    sum -= temp;
+                    error.getLast().add(temp);
+                    break;
+                }
+            }
+        }
+        return l;
+    }
+}
+</code></pre><p>上面的代码是我年轻时写的，现在已然看不懂了…<br>也懒得去理解了，仔细看了一下题目，发现又是一道回溯题，起始条件是空数组，前进规则是把当前位置之后的所有数都放进去试试，结束条件是数组之和等于target就加进result，大于target就return，以下是新代码</p>
+<pre><code>class Solution(object):
+    def combinationSum(self, candidates, target):
+        &quot;&quot;&quot;
+        :type candidates: List[int]
+        :type target: int
+        :rtype: List[List[int]]
+        &quot;&quot;&quot;
+        result = []
+        length = len(candidates)
+        def search(temp, start, target):
+            if target &lt; 0:
+                return
+            if target == 0:
+                result.append(temp)
+                return
+            for i in range(start, length):
+                temp.append(candidates[i])
+                search(list(temp), i, target - candidates[i])
+                temp.pop()
+        search([], 0, target)
+        return result
+</code></pre><p>然而不知道为啥运行了223ms…</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
