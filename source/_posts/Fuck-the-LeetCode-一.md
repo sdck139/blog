@@ -29,7 +29,7 @@ tags:
             return roman.toString();
         }
     }
-    
+
 因为一想反正要识别7个以上的特定字符，干脆就全给你写出来让你自己去匹配，结果就写出了这么蠢的算法，代码很简单不解释了。
 
 #### 13. Roman to Integer
@@ -66,7 +66,7 @@ tags:
             return 0;
         }
     }
-    
+
 这题是上题的兄弟题，思路就是十进制与其他进制的互转加上一个字符转数字的过程，看了一下运算总时间10ms，比最快的快了8倍...真是傻子出奇迹了
 
 ### Tree
@@ -90,6 +90,26 @@ tags:
 	}
 
 没啥好说，二叉树中序遍历，inorder那个方法里第二行放在第一行叫先序，放在第三行叫后序
+
+#### 96. Unique Binary Search Trees
+
+[原题地址](https://leetcode.com/problems/unique-binary-search-trees/description/)
+
+```
+public class Solution {
+  public int numTrees(int n) {
+      long result = 1;
+      for(int i = n + 1; i <= 2 * n; i ++) {
+          result *= i;
+          result /= (i - n);
+      }
+      result /= n + 1;
+      return (int)result;
+  }
+}
+```
+
+这题可以看[这个](http://blog.csdn.net/linhuanmars/article/details/24761459)，我用的卡塔兰数的公式
 
 ### Backtracking
 
@@ -120,7 +140,7 @@ tags:
                     return
             addMore("", 0, 0, n)
             return result
-            
+
 这题是回溯算法的基础题了，在我看来回溯算法需要抓住三个点：起始状态，前进规则和结束条件。然后疯狂递归就行了。
 比如这题，起始的状态就是一个空字符串。前进的规则就是：左括号数目大于右括号数目时，加左加右都可以，左括号数目等于括号数时，只能加右，其他情况只能加左。结束条件即左右括号数等于括号数。感觉不难理解。
 
@@ -172,7 +192,7 @@ tags:
             return l;
         }
     }
-    
+
 上面的代码是我年轻时写的，现在已然看不懂了...
 也懒得去理解了，仔细看了一下题目，发现又是一道回溯题，起始条件是空数组，前进规则是把当前位置之后的所有数都放进去试试，结束条件是数组之和等于target就加进result，大于target就return，以下是新代码
 
@@ -197,7 +217,7 @@ tags:
                     temp.pop()
             search([], 0, target)
             return result
-            
+
 然而不知道为啥运行了223ms...
 
 #### 89. Gray Code
